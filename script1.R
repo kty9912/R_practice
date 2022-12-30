@@ -49,3 +49,15 @@ x_mean <- mean(x)
 x_mean
 str5_paste <- paste(str5,collapse=" ")
 str5_paste
+
+
+# ggplot2 패키지 설치
+install.packages("ggplot2",dependencies=TRUE)
+
+# ggplot2 패키지 로드
+library(ggplot2)
+
+plot(1:10)
+
+# dplyr 패키지 로딩
+library(dplyr)
