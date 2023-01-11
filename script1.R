@@ -61,3 +61,13 @@ plot(1:10)
 
 # dplyr 패키지 로딩
 library(dplyr)
+
+# 여러 문자로 구성된 변수 생성
+x <- c("a", "a", "b", "c")
+x
+
+# 빈도 막대 그래프 출력
+qplot(x)
+
+# data에 mpg, x축에 hwy 변수 지정해 그래프 생성
+qplot(data=mpg, x=hwy)
