@@ -74,6 +74,7 @@ df_csv_exam
 
 
 # 데이터프레임을 csv파일로 저장하기
+
 # 데이터프레임 만들기
 df_midterm <- data.frame(english = c(90,80,60,70),
                          math = c(50,60,100,20),
@@ -82,3 +83,15 @@ df_midterm
 
 # R 내장 함수인 write.csv() 사용, file 파라미터로 파일명 지정
 write.csv(df_midterm, file = "data/df_midterm.csv")
+
+# R 전용 데이터 파일인 RDS 파일 활용
+saveRDS(df_midterm, file = "data/df_midterm.rds")
+
+# df_midterm 변수데이터 삭제
+rm(df_midterm)
+
+df_midterm
+
+# RDS파일 불러오기
+df_midterm <- readRDS("data/df_midterm.rds")
+df_midterm
