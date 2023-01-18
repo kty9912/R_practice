@@ -8,7 +8,9 @@
 ├──easy_r : R 프로젝트
 
 │   ├── script1.R : R 시작, 패키지 설치/로딩, 그래프 출력
+
 │   ├── script2 Dataframe.R : 데이터프레임, 데이터파일 불러오기 저장하기
+
 │   ├── script3_DataAnalysis.R : 데이터 분석 기초
 
 ## 모듈 상세 설명

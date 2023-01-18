@@ -119,3 +119,40 @@ library(ggplot2)
 
 # 연비 합격 빈도 막대 그래프 생성
 qplot(mpg$test)
+
+# total을 기준으로 A, B, C 등급 부여
+mpg$grade <- ifelse(mpg$total >= 30, "A",
+                    ifelse(mpg$total >= 20, "B", "C"))
+head(mpg,20)   # 데이터 확인
+
+# 등급 빈도표 생성
+table(mpg$grade)
+
+# 등급 빈도 막대 그래프 생성
+qplot(mpg$grade)
+
+
+# 원하는 만큼 범주 만들기
+# A, B, C, D 등급 부여
+mpg$grade2 <- ifelse(mpg$total>=30, "A",
+                     ifelse(mpg$total>=25, "B",
+                            ifelse(mpg$total>20,"C","D")))
+head(mpg,10)
+
+
+# 분석 도전! p.123
+midwest <- as.data.frame(ggplot2::midwest)
+midwest
+summary(midwest)
+# library(dplyr)
+midwest <- rename(midwest, total=poptotal, asian=popasian)
+midwest
+midwest$asian_ratio <- (midwest$asian/midwest$total)*100
+hist(midwest$asian_ratio)
+mean <- mean(midwest$asian_ratio)
+midwest$mean_asian_ration <- ifelse(
+  midwest$asian_ratio > mean,"large", "small")
+midwest
+table(midwest$mean_asian_ration)
+# library(ggplot2)
+qplot(midwest$mean_asian_ration)
