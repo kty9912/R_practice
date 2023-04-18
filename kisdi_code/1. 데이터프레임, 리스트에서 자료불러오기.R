@@ -2,8 +2,8 @@
 rm(list=ls())
 
 # 아래는 해당패키지가 설치되어 있으면 설치하라는 뜻임 (만약 설치되어 있으면 설치안해도 된다는 의미이기도 함)
-#if(!require(AER)) install.packages("AER")
-#if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(AER)) install.packages("AER")
+if(!require(tidyverse)) install.packages("tidyverse")
 
 # 아래는 패키지를 설치했으면 라이브러리로 탑재하라는 뜻임
 library(AER); library(tidyverse)

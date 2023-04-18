@@ -1,10 +1,5 @@
 rm(list=ls())
 
-# 현재 폴더의 위치를 알려면
-getwd()
-# setwd() 함수를 이용해서 자료가 있는 작업 폴더로 이동
-setwd("kisdi_code")
-
 # 아래와 같이 하면 에러가 나는데, 이는 R이 4.2가 되면서 기존의 CP949 포맷에서 UTF-8 포맷으로 변경되었기 때문임 (한글이 아닌 영문은 아래와 같이 해도 괜찮음)
 
 #df.txt <- read.table("laborforce.csv",header=TRUE, sep=",")
@@ -17,10 +12,6 @@ df.txt <- read.table("laborforce.csv",header=TRUE, sep=",",fileEncoding = "CP949
 # 아래와 같이 해야 잘 읽혀짐
 df.csv <- read.csv("laborforce.csv",header = TRUE, sep=",",
                    fileEncoding = "CP949", encoding = "UTF-8")
-
-
-
-
 
 
 # tidyverse 안에 있는 readr 패키지를 이용해서 csv 불러오기기

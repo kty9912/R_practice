@@ -21,7 +21,7 @@ IFS_area <- IFS.available.codes[[2]]
 # Possible code in the third dimension
 IFS_indicator <- IFS.available.codes[[3]]
 
-# FYI: DOT (Direction of Trade) is also important source for Trade data. Get dimension code of DOT dataset
+# FYI: DOT (Direction of Trade) is also important source for Tradfe data. Get dimension code of DOT dataset
 DOT.available.codes <- DataStructureMethod("DOT")
 # Possible code in the third dimension
 DOT_indicator <- DOT.available.codes[[3]]
@@ -105,4 +105,4 @@ data5 <- data5 %>% mutate(cont=as.factor(continent))
 model2 <- plm(log(gdp)~log(exrate)+I(cont),data5, model="random")
 # In the example above, missing dummy (continent) is Africa
 
-stargazer(model1, model2,omit = "cont", type="html", out = "IMF.html")
+stargazer(model1, model2, type="text")

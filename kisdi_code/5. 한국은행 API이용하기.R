@@ -1,8 +1,8 @@
 #if (!require(devtools)) install.packages("devtools"); require(devtools)
 #devtools::install_github("seokhoonj/ecos", force = TRUE)
 
-#if(!require(patchwork)) install.packages("patchwork")
-#if(!require(ggfortify)) install.packages("ggfortify")
+# if(!require(patchwork)) install.packages("patchwork")
+# if(!require(ggfortify)) install.packages("ggfortify")
 
 rm(list=ls())
 
@@ -14,7 +14,7 @@ library(ecos); library(xts); library(tidyverse); library(patchwork); library(lub
 
 # 한국은행 OPEN API를 이용하기 위해서는 Key를 부여받아야 하는데, 아래의 링크에서 신청해서 받을 것
 # https://ecos.bok.or.kr/api/#/AuthKeyApply
-my_key <- c('MOSOME29TC3PEN7A7QF8')
+my_key <- c('VWCAV34ZSP4X0WENHQVG')
 
 # 우선 통계표[코드][주기]에 있는 코드가 stat_code가 되고
 # 통계항목[코드][단위]에 있는 코드가 item_code1 임.
@@ -101,7 +101,6 @@ mergem <- merge(tscall_m,inf_m) %>% merge(tsind_m)
 
 # na.omit()을 이용해서 NA가 있는자료는 모두 삭제
 mergem <- na.omit(mergem)
-autoplot(mergem)
 
 ols1 <- lm(log(tsind_m)~tscall_m +inf_m, mergem)
 
