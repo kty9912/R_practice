@@ -29,10 +29,25 @@ exam %>% filter(english < 90 | science < 50) #영어점수 90점 미만 or 과�
 # 목록에 해당하는 열 추출
 exam %>%  filter(class ==1 | class==3 | class==5) # 1,3,5반 
 
+
 # 매치 연산자 사용 %in%
 exam %>% filter(class %in% c(1,3,5)) # 1,3,5반
 
-class1 <- exam %>% filter(class==1)
-class2 <- exam %>% filter(class==2)
 
-mean
+class1 <- exam %>% filter(class==1) # class가 1인 행 추출, class1에 할당
+class2 <- exam %>% filter(class==2) # class가 2인 행 추출, class2에 할당
+# 1반 수학 점수 평균
+mean(class1$math)
+# 2반 수학 점수 평균
+mean(class2$math)
+
+
+# 혼자서 해보기 p.133
+mpg <- as.data.frame(ggplot2::mpg) # mpg 데이터 불러오기
+mpg_4 <- mpg %>% filter(displ <= 4) # displ(배기량) 4이하 추출
+mpg_4
+mpg_5 <- mpg %>% filter(displ >= 5) # displ(배기량) 5이상 추출
+mpg_5
+mean(mpg_5$hwy) # hwy(고속도로 연비)
+mean(mpg_4$hwy) # hwy평균
+
